@@ -158,6 +158,8 @@
 <p id="p2">“Very good. You’ve all arrived on time. Today is the Aperture Opening Ceremony, a major turning point in your lives. Enough preliminaries. Follow me.” Leading them was the Academy Elder. His hair and beard were white, but he remained full of vigour as he led the youths into the Clan Leader’s Pavilion.</p>
 <p id="p3">However, they did not go upstairs. Instead, they passed through an entrance in the ground-floor hall and headed down, following the stone steps into a cavern. The youths exclaimed in wonder. The cavern was magnificent. Its stalactites radiated seven colours: red, orange, yellow, green, cyan, blue, and violet, illuminating their faces with rainbow brilliance. Standing amid the crowd, Fang Yuan quietly examined everything, thinking inwardly: <em>“Several hundred years ago, the Gu Yue Clan migrated from Central Continent to Southern Border and settled on Qing Mao Mountain. They chose this place for a spirit spring in the cavern. The spring produces large quantities of primeval stones; it could be called the very foundation of Gu Yue Village.”</em></p>
 <p id="p4">As they walked several hundred steps farther, their surroundings grew darker, and they began to hear the faint sound of water. Rounding a bend, they came upon an underground river just over ten metres wide. Here, the coloured light of the stalactites had vanished entirely. Yet in the darkness, the river gave off a faint blue glow, like the river of stars in the night sky. The river flowed from the cavern’s dark depths, its water so clear that they could see fish swimming within it, aquatic plants, and even the sand and stones on the riverbed.</p>
+  <div class="art-trigger-row"><button class="art-trigger" type="button" data-art-group="cavern" data-art-id="cavern-ceremony" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/></svg><span>View cavern art</span><span class="art-count">1</span></button></div>
+
 <p id="p5">On the opposite bank lay a field of flowers. These were moon orchids, deliberately cultivated by the Gu Yue Clan. Their crescent-shaped petals had a delicate blue-pink hue. Their stems resembled jade, and their centres shone with the soft lustre of pearls catching the light. At first glance, against the dark backdrop, the flower field beside the river resembled a vast blue-green carpet studded with countless pearls.</p>
 
 <p id="p6"><em>“Moon orchids are food for many kinds of Gu. This flower field could be called the clan’s largest growing site.”</em> Fang Yuan understood this perfectly. Around him, the other youths murmured, “So beautiful.” “It really is lovely.”</p>
@@ -187,9 +189,47 @@
 <p id="p29">A sharp gleam flickered in Fang Yuan’s eyes as he considered how to exploit this knowledge for the greatest possible benefit. Exposing the deception now would earn him a small reward from the clan, but it would also antagonize the influential, high-ranking Gu Yue Chi Lian. That was out of the question. Blackmail was no option for now, either. He was too weak; attempting it would only bring disaster upon himself. As he considered this, he suddenly heard the Academy Elder call his name:</p>
 
 <p id="p30">“Gu Yue Fang Yuan!”</p>
+  <div class="art-trigger-row"><button class="art-trigger" type="button" data-art-group="namecall" data-art-id="fang-yuan-namecall" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m21 15-5-5L5 20"/></svg><span>View Fang Yuan art</span><span class="art-count">1</span></button></div>
+
   </div>
   <div class="end-mark" aria-hidden="true">◆</div>
 </main>
+
+
+<dialog class="chapter-art-drawer" id="chapterArtDrawer" aria-labelledby="chapterArtTitle">
+  <div class="art-drawer-shell">
+    <div class="art-sheet-grip" aria-hidden="true"><span></span></div>
+    <header class="art-drawer-header"><div><div class="art-kicker">CHAPTER 4 · ARTWORK</div><h2 id="chapterArtTitle">Chapter artwork</h2><p>Optional illustrations, grouped by scene.</p></div><button class="art-close" type="button" aria-label="Close artwork drawer">×</button></header>
+    <div class="art-filters" role="group" aria-label="Filter artwork">
+      <button type="button" data-art-filter="all" aria-pressed="true">All <span>2</span></button>
+      <button type="button" data-art-filter="cavern">The Cavern <span>1</span></button>
+      <button type="button" data-art-filter="namecall">The Name Call <span>1</span></button>
+    </div>
+    <figure class="art-featured"><button class="art-featured-open" type="button" aria-label="Open full-size artwork"><img id="artFeaturedImage" src="" alt=""></button><figcaption><strong id="artFeaturedTitle"></strong><span id="artFeaturedCaption"></span><small id="artFeaturedCredit" class="art-featured-credit" hidden></small></figcaption></figure>
+    <div class="art-rail-label">SELECT AN IMAGE</div><div class="art-thumb-rail" id="artThumbRail" role="listbox" aria-label="Chapter 4 illustrations"></div>
+  </div>
+</dialog>
+<dialog class="art-lightbox" id="artLightbox" aria-label="Full-size chapter artwork"><button class="art-lightbox-close" type="button" aria-label="Close full-size artwork">×</button><img id="artLightboxImage" src="" alt=""><p id="artLightboxCaption"></p></dialog>
+<script>
+(() => {
+ const art=[
+  {id:'cavern-ceremony',group:'cavern',title:'The Cavern Ceremony',caption:'The Aperture Opening Ceremony in the underground cavern of Gu Yue Village, with stalactites radiating seven colours and youths gathered for the ceremony.',artist:'Kodoku Studio',src:'assets/art/chapter4/cavern-ceremony.webp',thumb:'assets/art/chapter4/cavern-ceremony-thumb.webp',alt:'The Aperture Opening Ceremony in the underground cavern.'},
+  {id:'fang-yuan-namecall',group:'namecall',title:'Gu Yue Fang Yuan!',caption:'As the Academy Elder calls his name, Gu Yue Fang Yuan steps forward for the Aperture Opening Ceremony.',artist:'Kodoku Studio',src:'assets/art/chapter4/fang-yuan-namecall.webp',thumb:'assets/art/chapter4/fang-yuan-namecall-thumb.webp',alt:'Gu Yue Fang Yuan as his name is called for the Aperture Opening Ceremony.'}
+ ];
+ const drawer=document.getElementById('chapterArtDrawer'),lightbox=document.getElementById('artLightbox'),featured=document.getElementById('artFeaturedImage'),title=document.getElementById('artFeaturedTitle'),caption=document.getElementById('artFeaturedCaption'),artistCredit=document.getElementById('artFeaturedCredit'),rail=document.getElementById('artThumbRail'),filters=[...drawer.querySelectorAll('[data-art-filter]')];
+ let activeGroup='all',activeId='cavern-ceremony',returnY=0,lastTrigger=null;
+ function visibleArt(){return activeGroup==='all'?art:art.filter(x=>x.group===activeGroup)}
+ function render(){const list=visibleArt();if(!list.some(x=>x.id===activeId))activeId=list[0].id;const item=art.find(x=>x.id===activeId);featured.src=item.src;featured.alt=item.alt;featured.closest('.art-featured-open').dataset.artId=item.id;title.textContent=item.title;caption.textContent=item.caption;artistCredit.textContent=item.artist?'Artwork by '+item.artist:'';artistCredit.hidden=!item.artist;rail.innerHTML='';list.forEach(x=>{const b=document.createElement('button');b.type='button';b.className='art-thumb'+(x.id===activeId?' is-selected':'');b.dataset.artId=x.id;b.setAttribute('role','option');b.setAttribute('aria-selected',String(x.id===activeId));b.innerHTML=`<img src="${x.thumb}" alt="" loading="lazy" decoding="async"><span>${x.title}</span>`;b.addEventListener('click',()=>{activeId=x.id;render();openLightbox()});rail.appendChild(b)});}
+ function selectGroup(group){activeGroup=group;filters.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.artFilter===group)));const list=visibleArt();if(!list.some(x=>x.id===activeId))activeId=list[0].id;render()}
+ document.addEventListener('click',event=>{const button=event.target.closest('.art-trigger');if(!button)return;returnY=window.scrollY;lastTrigger=button;if(button.dataset.artId)activeId=button.dataset.artId;selectGroup(button.dataset.artGroup);drawer.showModal()});
+ filters.forEach(button=>button.addEventListener('click',()=>selectGroup(button.dataset.artFilter)));
+ drawer.querySelector('.art-close').addEventListener('click',()=>drawer.close());drawer.addEventListener('click',e=>{if(e.target===drawer)drawer.close()});
+ drawer.addEventListener('close',()=>{if(lastTrigger)lastTrigger.focus({preventScroll:true});window.scrollTo({top:returnY,behavior:'instant'})});
+ function openLightbox(){const item=art.find(x=>x.id===activeId);document.getElementById('artLightboxImage').src=item.src;document.getElementById('artLightboxImage').alt=item.alt;document.getElementById('artLightboxCaption').textContent=item.artist?item.title+' · Artwork by '+item.artist:item.title;lightbox.showModal()}
+document.querySelector('.art-featured-open').addEventListener('click',openLightbox);
+ lightbox.querySelector('.art-lightbox-close').addEventListener('click',()=>lightbox.close());lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.close()});
+})();
+</script>
 
 
 <nav class="chapter-nav">

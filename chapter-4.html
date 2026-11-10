@@ -84,7 +84,7 @@
     <figcaption class="chapter-header-credit">Artwork by Kodoku Studio</figcaption>
   </figure>
   <figure class="chapter-header-art">
-    <img src="assets/art/chapter4/fang-yuan-namecall.webp" alt="Gu Yue Fang Yuan as his name is called for the Aperture Opening Ceremony, the climactic moment of Chapter 4." loading="eager" fetchpriority="high" decoding="async">
+    <img src="assets/art/chapter4/fang-yuan-turn-header.webp" alt="Gu Yue Fang Yuan turning to face the Academy Elder as his name is called for the Aperture Opening Ceremony." loading="eager" fetchpriority="high" decoding="async">
     <div class="chapter-header-art-shade" aria-hidden="true"></div>
     <figcaption class="chapter-header-credit">Artwork by Kodoku Studio</figcaption>
   </figure>
@@ -201,9 +201,9 @@
     <div class="art-sheet-grip" aria-hidden="true"><span></span></div>
     <header class="art-drawer-header"><div><div class="art-kicker">CHAPTER 4 · ARTWORK</div><h2 id="chapterArtTitle">Chapter artwork</h2><p>Optional illustrations, grouped by scene.</p></div><button class="art-close" type="button" aria-label="Close artwork drawer">×</button></header>
     <div class="art-filters" role="group" aria-label="Filter artwork">
-      <button type="button" data-art-filter="all" aria-pressed="true">All <span>2</span></button>
-      <button type="button" data-art-filter="cavern">The Cavern <span>1</span></button>
-      <button type="button" data-art-filter="namecall">The Name Call <span>1</span></button>
+      <button type="button" data-art-filter="all" aria-pressed="true">All <span>6</span></button>
+      <button type="button" data-art-filter="cavern">The Cavern <span>3</span></button>
+      <button type="button" data-art-filter="namecall">The Name Call <span>3</span></button>
     </div>
     <figure class="art-featured"><button class="art-featured-open" type="button" aria-label="Open full-size artwork"><img id="artFeaturedImage" src="" alt=""></button><figcaption><strong id="artFeaturedTitle"></strong><span id="artFeaturedCaption"></span><small id="artFeaturedCredit" class="art-featured-credit" hidden></small></figcaption></figure>
     <div class="art-rail-label">SELECT AN IMAGE</div><div class="art-thumb-rail" id="artThumbRail" role="listbox" aria-label="Chapter 4 illustrations"></div>
@@ -214,7 +214,11 @@
 (() => {
  const art=[
   {id:'cavern-ceremony',group:'cavern',title:'The Cavern Ceremony',caption:'The Aperture Opening Ceremony in the underground cavern of Gu Yue Village, with stalactites radiating seven colours and youths gathered for the ceremony.',artist:'Kodoku Studio',src:'assets/art/chapter4/cavern-ceremony.webp',thumb:'assets/art/chapter4/cavern-ceremony-thumb.webp',alt:'The Aperture Opening Ceremony in the underground cavern.'},
-  {id:'fang-yuan-namecall',group:'namecall',title:'Gu Yue Fang Yuan!',caption:'As the Academy Elder calls his name, Gu Yue Fang Yuan steps forward for the Aperture Opening Ceremony.',artist:'Kodoku Studio',src:'assets/art/chapter4/fang-yuan-namecall.webp',thumb:'assets/art/chapter4/fang-yuan-namecall-thumb.webp',alt:'Gu Yue Fang Yuan as his name is called for the Aperture Opening Ceremony.'}
+  {id:'fang-yuan-namecall',group:'namecall',title:'Gu Yue Fang Yuan!',caption:'As the Academy Elder calls his name, Gu Yue Fang Yuan steps forward for the Aperture Opening Ceremony.',artist:'Kodoku Studio',src:'assets/art/chapter4/fang-yuan-namecall.webp',thumb:'assets/art/chapter4/fang-yuan-namecall-thumb.webp',alt:'Gu Yue Fang Yuan as his name is called for the Aperture Opening Ceremony.'},
+  {id:'cavern-stalactites',group:'cavern',title:'Cavern Stalactites',caption:'Stalactites radiating seven colours above the gathered youths in the underground cavern of Gu Yue Village.',artist:'Kodoku Studio',src:'assets/art/chapter4/cavern-stalactites.webp',thumb:'assets/art/chapter4/cavern-stalactites-thumb.webp',alt:'Stalactites radiating seven colours in the underground cavern.'},
+  {id:'underground-river',group:'cavern',title:'The Underground River',caption:'The underground river flowing through the cavern where the Aperture Opening Ceremony takes place.',artist:'Kodoku Studio',src:'assets/art/chapter4/underground-river.webp',thumb:'assets/art/chapter4/underground-river-thumb.webp',alt:'The underground river in the cavern.'},
+  {id:'moon-orchid-field',group:'cavern',title:'The Moon Orchid Field',caption:'The moon orchid field landscape visible within the underground cavern during the ceremony.',artist:'Kodoku Studio',src:'assets/art/chapter4/moon-orchid-field-landscape.webp',thumb:'assets/art/chapter4/moon-orchid-field-thumb.webp',alt:'The moon orchid field landscape in the cavern.'},
+  {id:'fang-yuan-turn',group:'namecall',title:'Fang Yuan Turns',caption:'Gu Yue Fang Yuan turns to face the Academy Elder as his name is called for the Aperture Opening Ceremony.',artist:'Kodoku Studio',src:'assets/art/chapter4/fang-yuan-turn-landscape.webp',thumb:'assets/art/chapter4/fang-yuan-turn-thumb.webp',alt:'Gu Yue Fang Yuan turning to face the Elder.'}
  ];
  const drawer=document.getElementById('chapterArtDrawer'),lightbox=document.getElementById('artLightbox'),featured=document.getElementById('artFeaturedImage'),title=document.getElementById('artFeaturedTitle'),caption=document.getElementById('artFeaturedCaption'),artistCredit=document.getElementById('artFeaturedCredit'),rail=document.getElementById('artThumbRail'),filters=[...drawer.querySelectorAll('[data-art-filter]')];
  let activeGroup='all',activeId='cavern-ceremony',returnY=0,lastTrigger=null;

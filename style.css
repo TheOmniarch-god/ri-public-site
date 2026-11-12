@@ -6482,7 +6482,7 @@ p.tn-blurred {
   height: 100%;
   object-fit: cover;
   object-position: center 15%;
-  filter: brightness(.82) saturate(.94);
+  filter: brightness(.72) saturate(.92);
 }
 .chapter-header-art-shade { position: absolute; inset: 0; pointer-events: none; background: transparent; }
 .reader-head.with-header-art > :not(.chapter-header-art) { position: relative; z-index: 1; text-align: center; }

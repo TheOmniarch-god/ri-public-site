@@ -6698,3 +6698,13 @@ html.rf-opendyslexic body[data-chapter] :not(svg):not(svg *) {
   .patron-card, .patron-cta, .patron-chip, .patron-currency-btn, .patron-field input { transition: none !important; }
   .patron-card:hover, .patron-cta:hover { transform: none; }
 }
+
+/* Support page + navbar — mobile polish (small screens only) */
+@media (max-width: 860px) {
+  /* Raise the "Support the Craft" block closer under the fixed navbar */
+  .support-main { padding: 92px 0 64px; }
+  /* Center the logo; burger stays pinned to the right, logo nudged a touch lower */
+  .nav-inner { justify-content: center; position: relative; }
+  .nav-burger { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); }
+  .nav-logo { transform: translateY(2px); }
+}

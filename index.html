@@ -54,6 +54,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+SC:wght@400&family=Noto+Serif+SC:wght@500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261119-containers-v8">
+<style>
+/* Progressive image fade-in: images fade in as they load instead of popping. */
+img.progressive { opacity: 0; transition: opacity .55s ease; }
+img.progressive.loaded { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { img.progressive { opacity: 1; transition: none; } }
+</style>
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="icon-48.png" type="image/png" sizes="48x48">
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
@@ -111,7 +117,7 @@
 <section class="hero" id="featured">
   <div class="wrap hero-grid">
     <figure class="cover-card reveal">
-      <img fetchpriority="high" src="cover.jpg?v=20260927-7f175425" alt="Reverend Insanity — official cover art" width="1080" height="1440">
+      <img data-fade fetchpriority="high" src="cover-1080.webp" srcset="cover-540.webp 540w, cover-1080.webp 1080w" sizes="(max-width: 720px) 210px, 272px" alt="Reverend Insanity — official cover art" width="1080" height="1440" decoding="async">
     </figure>
 
     <div class="hero-copy">
@@ -285,7 +291,7 @@
   <div class="wrap">
     <div class="renzu-banner encyclopedia-banner reveal">
       <figure class="renzu-art-frame encyclopedia-art-frame">
-        <img class="renzu-art-img" src="cover.jpg?v=20260927-7f175425" alt="Reverend Insanity Encyclopedia" width="600" height="800" loading="lazy">
+        <img data-fade class="renzu-art-img" src="cover-1080.webp" srcset="cover-540.webp 540w, cover-1080.webp 1080w" sizes="(max-width: 720px) 80vw, 600px" alt="Reverend Insanity Encyclopedia" width="600" height="800" loading="lazy" decoding="async">
         <div class="renzu-art-overlay"><span class="renzu-art-seal" style="background: rgba(168,121,26,0.92);">百科</span></div>
       </figure>
       <div class="renzu-banner-content">
@@ -316,7 +322,7 @@
   <div class="wrap">
     <div class="renzu-banner reveal">
       <figure class="renzu-art-frame">
-        <img class="renzu-art-img"  src="renzu-art.webp" alt="The Legends of Ren Zu — Hope Gu and the Ancestral Path" width="1200" height="1038" loading="lazy" decoding="async">
+        <img data-fade class="renzu-art-img" src="renzu-1200.webp" srcset="renzu-600.webp 600w, renzu-1200.webp 1200w" sizes="(max-width: 720px) 100vw, 640px" alt="The Legends of Ren Zu — Hope Gu and the Ancestral Path" width="1200" height="1038" loading="lazy" decoding="async">
         <div class="renzu-art-overlay">
           <span class="renzu-art-seal">人祖传</span>
         </div>
@@ -386,5 +392,17 @@
 </footer>
 
 <script src="app.js?v=20261101-reader-jump-v1"></script>
+<script>
+/* Progressive image fade-in: mark images, fade them in as they finish loading. */
+(function () {
+  function arm(img) {
+    img.classList.add('progressive');
+    if (img.complete && img.naturalWidth > 0) { img.classList.add('loaded'); return; }
+    img.addEventListener('load', function () { img.classList.add('loaded'); }, { once: true });
+    img.addEventListener('error', function () { img.classList.add('loaded'); }, { once: true });
+  }
+  document.querySelectorAll('img[data-fade]').forEach(arm);
+})();
+</script>
 </body>
 </html>

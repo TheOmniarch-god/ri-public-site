@@ -1451,7 +1451,7 @@ html.js-anim .d2 { transition-delay: 0.1s; }
 /* ---------- support page ---------- */
 
 .support-main {
-  padding: 130px 0 96px;
+  padding: 96px 0 72px;
 }
 .support-header {
   max-width: 780px;
@@ -6702,7 +6702,7 @@ html.rf-opendyslexic body[data-chapter] :not(svg):not(svg *) {
 /* Support page + navbar — mobile polish (small screens only) */
 @media (max-width: 860px) {
   /* Raise the "Support the Craft" block closer under the fixed navbar */
-  .support-main { padding: 92px 0 64px; }
+  .support-main { padding: 72px 0 56px; }
   /* Gu Zhen Ren logo stays left on every page; small 2px nudge preserved */
   .nav-logo { transform: translateY(2px); }
 }

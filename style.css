@@ -6703,8 +6703,6 @@ html.rf-opendyslexic body[data-chapter] :not(svg):not(svg *) {
 @media (max-width: 860px) {
   /* Raise the "Support the Craft" block closer under the fixed navbar */
   .support-main { padding: 92px 0 64px; }
-  /* Center the logo; burger stays pinned to the right, logo nudged a touch lower */
-  .nav-inner { justify-content: center; position: relative; }
-  .nav-burger { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); }
+  /* Gu Zhen Ren logo stays left on every page; small 2px nudge preserved */
   .nav-logo { transform: translateY(2px); }
 }

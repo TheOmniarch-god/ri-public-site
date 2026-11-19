@@ -15,10 +15,6 @@
       "destination": "/notes.html"
     },
     {
-      "source": "/world",
-      "destination": "/world.html"
-    },
-    {
       "source": "/about",
       "destination": "/about.html"
     },
@@ -77,31 +73,6 @@
   ],
   "redirects": [
     {
-      "source": "/wiki/world",
-      "destination": "/world",
-      "permanent": true
-    },
-    {
-      "source": "/wiki/world/",
-      "destination": "/world",
-      "permanent": true
-    },
-    {
-      "source": "/Wiki",
-      "destination": "/world",
-      "permanent": true
-    },
-    {
-      "source": "/wiki",
-      "destination": "/world",
-      "permanent": true
-    },
-    {
-      "source": "/World",
-      "destination": "/world",
-      "permanent": true
-    },
-    {
       "source": "/Notes",
       "destination": "/notes",
       "permanent": true
@@ -136,4 +107,3 @@
     "silent": true
   }
 }
-

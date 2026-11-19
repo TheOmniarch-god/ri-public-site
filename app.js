@@ -1108,7 +1108,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // If it's a link to /notes#... — let it navigate (smart superscript system)
       if (href.indexOf("/notes#") !== -1 || href.indexOf("#ch") === 0) {
         // Don't prevent — allow navigation to notes page with hash
-        // If same page anchor (world page world-ch1-...), handle smooth scroll
+        // Same-page anchors (e.g. notes anchors) — smooth scroll
         if (href.charAt(0) === "#" || href.indexOf("#world-") !== -1) {
           var targetId = href.split("#")[1];
           var targetNote = document.getElementById(targetId);

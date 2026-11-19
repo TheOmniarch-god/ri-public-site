@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+SC:wght@400&family=Noto+Serif+SC:wght@500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261103-hero-center-header-left-v1">
+<link rel="stylesheet" href="style.css?v=20261115-patron-cards-v3">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="icon-48.png" type="image/png" sizes="48x48">
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
@@ -65,6 +65,102 @@
       <p class="support-lead">
         Every chapter of this re-translation is released freely — no paywalls, no locked chapters, and no artificial delays. If you value the meticulous phrasing, poetic meter, and philosophical depth poured into this 2,334-chapter undertaking, voluntary contributions help defray web hosting, domain maintenance, and the immense time required to see it through.
       </p>
+    </div>
+
+    <!-- ============ IN-SITE PATRONAGE (PAYSTACK) ============ -->
+    <div class="patron-section reveal d1" id="back-the-craft">
+      <div class="patron-head">
+        <p class="patron-kicker">In-Site Patronage<span class="cjk">入道供养</span></p>
+        <h2 class="patron-title">Fuel the Craft</h2>
+        <p class="patron-lead">Payment completes here on the page, in one breath. Your card details never touch this site; they travel sealed to Paystack&rsquo;s vault and no further.</p>
+      </div>
+
+      <div class="patron-cards">
+        <!-- One-time offering -->
+        <article class="patron-card patron-onetime" id="cardOneTime" aria-labelledby="oneTimeTitle">
+          <div class="patron-body">
+            <span class="patron-pill patron-pill-red">One-Time</span>
+            <h3 class="patron-cardtitle" id="oneTimeTitle">One-Time Offering</h3>
+            <p class="patron-carddesc">Any amount, whenever the mood takes you. Tea money for the translator, stone by stone up the mountain.</p>
+
+            <div class="patron-currency" role="group" aria-label="Currency you type in">
+              <button type="button" class="patron-currency-btn" data-currency="NGN" aria-pressed="false">₦ NGN</button>
+              <button type="button" class="patron-currency-btn patron-currency-active" data-currency="USD" aria-pressed="true">$ USD</button>
+            </div>
+
+            <div class="patron-chips" role="group" aria-label="Quick amounts">
+              <button type="button" class="patron-chip" data-ngn="2000" data-usd="2">$2</button>
+              <button type="button" class="patron-chip patron-chip-active" data-ngn="5000" data-usd="5" aria-pressed="true">$5</button>
+              <button type="button" class="patron-chip" data-ngn="10000" data-usd="10">$10</button>
+              <button type="button" class="patron-chip" data-ngn="20000" data-usd="20">$20</button>
+            </div>
+
+            <label class="patron-field">
+              <span class="patron-field-label" id="oneTimeAmountLabel">Amount ($)</span>
+              <input type="number" id="oneTimeAmount" inputmode="decimal" min="1" step="0.5" value="5" aria-describedby="oneTimeHint oneTimeFx">
+            </label>
+            <p class="patron-fx" id="oneTimeFx">Live conversion appears here.</p>
+            <p class="patron-hint" id="oneTimeHint">Minimum $1. Paystack charges the naira equivalent; your bank handles the rest.</p>
+
+            <label class="patron-field">
+              <span class="patron-field-label">Email for receipt</span>
+              <input type="email" id="oneTimeEmail" autocomplete="email" placeholder="you@example.com" inputmode="email">
+            </label>
+
+            <button type="button" class="patron-cta patron-cta-red" id="oneTimeBtn">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Offer <span id="oneTimeLabel">₦5,000</span>
+            </button>
+            <p class="patron-error" id="oneTimeError" role="alert" hidden></p>
+            <div class="patron-success" id="oneTimeSuccess" hidden aria-live="polite">
+              <div class="patron-successseal"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <h4 class="patron-successtitle">The Omniarch thanks you</h4>
+              <p class="patron-successtext">Your offering is recorded. Save this reference and drop it in <strong>#support</strong> on Discord to claim any tier role:</p>
+              <code class="patron-reference" id="oneTimeReference"></code>
+              <button type="button" class="patron-reset" data-reset="oneTime">Make another offering</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Monthly patronage -->
+        <article class="patron-card patron-monthly patron-featured" id="cardMonthly" aria-labelledby="monthlyTitle">
+          <div class="patron-body">
+            <span class="patron-pill patron-pill-amber">Monthly</span>
+            <h3 class="patron-cardtitle" id="monthlyTitle">Monthly Patron · <span class="cjk">月供</span></h3>
+            <div class="patron-price">
+              <span class="patron-price-amount" id="monthlyUsdBig">≈ $3.20</span>
+              <span class="patron-price-period">/ month</span>
+            </div>
+            <p class="patron-usd">Billed as <strong>₦5,000</strong> / month via Paystack · <span id="monthlyUsdNote">indicative estimate</span></p>
+            <p class="patron-carddesc">The steady flame that keeps the lamp lit: seven consecutive days become seventy, seventy become the thousand chapters ahead.</p>
+
+            <ul class="patron-perks">
+              <li><span>✓</span> Ongoing monthly support; cancel anytime</li>
+              <li><span>✓</span> Your name kept in the monthly patron roll</li>
+              <li><span>✓</span> Priority lore, glossary and translation feedback in Discord</li>
+            </ul>
+
+            <label class="patron-field">
+              <span class="patron-field-label">Email for receipt</span>
+              <input type="email" id="monthlyEmail" autocomplete="email" placeholder="you@example.com" inputmode="email">
+            </label>
+
+            <button type="button" class="patron-cta patron-cta-gold" id="monthlyBtn">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Become a Monthly Patron
+            </button>
+            <p class="patron-error" id="monthlyError" role="alert" hidden></p>
+            <div class="patron-success" id="monthlySuccess" hidden aria-live="polite">
+              <div class="patron-successseal patron-successseal-gold"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div>
+              <h4 class="patron-successtitle">A patron enters the Hall</h4>
+              <p class="patron-successtext">Your monthly patronage is set. Save this reference and drop it in <strong>#support</strong> on Discord:</p>
+              <code class="patron-reference" id="monthlyReference"></code>
+              <button type="button" class="patron-reset" data-reset="monthly">I was mistaken — go back</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="patron-footnote">Processed by Paystack in-page. No card details touch our servers. Settled in naira; your bank converts at its own rate to your card's currency.</p>
     </div>
 
     <!-- Crypto Contribution Section (Primary) -->
@@ -248,6 +344,295 @@ function showCopied() {
   btnText.textContent = "Copied to Clipboard!";
   setTimeout(function() { btnText.textContent = "Copy Wallet Address"; }, 2500);
 }
+</script>
+<script>
+/* ============================================================
+   In-site patronage — Paystack inline. Card details are entered
+   inside Paystack's secure iframe and never touch this page.
+   The public key is designed to be public; NEVER place the
+   SECRET key here.
+   ============================================================ */
+var OMNIARCH_PAY = {
+  // Dashboard → Settings → API Keys & Webhooks → Public key
+  publicKey: 'pk_live_e73b49b732f2ebae3e4b2965028bce87f1acfc82',
+  // Dashboard → Plans → your monthly ₦5,000 plan → code (PLN_...)
+  monthlyPlan: 'PLN_rd9sjv32n5p7idg',
+  currency: 'NGN',
+  monthlyDisplay: 5000
+};
+
+/* Lazy-load Paystack inline only when needed. */
+function loadPaystack(cb) {
+  if (window.PaystackPop) { cb(); return; }
+  var s = document.createElement('script');
+  s.src = 'https://js.paystack.co/v1/inline.js';
+  s.async = true;
+  s.onload = cb;
+  s.onerror = function () {
+    payError('Could not reach Paystack. Check your connection or use the crypto offering below.', 'global');
+  };
+  document.body.appendChild(s);
+}
+
+var PAISE = 100; // ₦1 = 100 kobo
+function kobo(ngn) { return Math.round(Number(ngn) * PAISE); }
+function naira(n) { return '₦' + Number(n).toLocaleString('en-NG', { maximumFractionDigits: 0 }); }
+
+function payError(msg, which) {
+  var el = document.getElementById(which === 'monthly' ? 'monthlyError' : (which === 'global' ? 'oneTimeError' : 'oneTimeError'));
+  if (el) { el.textContent = msg; el.hidden = false; }
+}
+function clearPayError(which) {
+  var el = document.getElementById(which === 'monthly' ? 'monthlyError' : 'oneTimeError');
+  if (el) { el.textContent = ''; el.hidden = true; }
+}
+
+/* ---------- FX: one shared naira-to-USD rate, live when possible ---------- */
+var OMNIARCH_FX = (function () {
+  var state = { ngnPerUsd: 1575, live: false, note: '' };
+  var subs = [];
+  function publish() { for (var i = 0; i < subs.length; i++) { try { subs[i](state); } catch (e) {} } }
+  function tryFetch(url, ms, ok, failCb) {
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var t = setTimeout(function () { if (ctrl) ctrl.abort(); }, ms);
+    fetch(url, ctrl ? { signal: ctrl.signal } : undefined)
+      .then(function (r) { return r.json(); })
+      .then(ok)
+      .catch(failCb)
+      .finally(function () { clearTimeout(t); });
+  }
+  function apply(ngnPerUsd, dateLabel) {
+    if (isFinite(ngnPerUsd) && ngnPerUsd > 0) { state.ngnPerUsd = ngnPerUsd; state.live = true; state.note = dateLabel || ''; }
+    else { state.ngnPerUsd = 1575; state.live = false; state.note = ''; }
+    publish();
+  }
+  tryFetch('https://open.er-api.com/v6/latest/NGN', 7000,
+    function (d) {
+      var rate = d && d.rates && d.rates.USD;
+      if (rate) { apply(1 / rate, (d.time_last_update_utc || '').slice(0, 16)); }
+      else { apply(NaN); }
+    },
+    function () {
+      tryFetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/ngn.min.json', 7000,
+        function (d) {
+          var rate = d && d.ngn && d.ngn.usd;
+          if (rate) { apply(1 / rate, d.date || ''); }
+          else { apply(NaN); }
+        },
+        function () { apply(NaN); }
+      );
+    }
+  );
+  return {
+    get: function () { return state; },
+    subscribe: function (fn) { subs.push(fn); try { fn(state); } catch (e) {} }
+  };
+})();
+
+function fmtNgn(n) { return '₦' + Math.round(Number(n) || 0).toLocaleString('en-NG'); }
+
+/* ---------- Live USD estimate for the monthly amount ---------- */
+(function () {
+  var big = document.getElementById('monthlyUsdBig');
+  var note = document.getElementById('monthlyUsdNote');
+  if (!big || !note) return;
+  OMNIARCH_FX.subscribe(function (fx) {
+    var usd = OMNIARCH_PAY.monthlyDisplay / fx.ngnPerUsd;
+    big.textContent = '≈ $' + usd.toFixed(2);
+    note.textContent = fx.live
+      ? 'estimate at the live rate' + (fx.note ? ' · ' + fx.note : '')
+      : 'indicative estimate';
+  });
+})();
+
+/* ---------- One-time offering (types in ₦ or $; settles in ₦) ---------- */
+(function () {
+  var amountInput = document.getElementById('oneTimeAmount');
+  var amountLabel = document.getElementById('oneTimeAmountLabel');
+  var emailInput = document.getElementById('oneTimeEmail');
+  var fxLine = document.getElementById('oneTimeFx');
+  var hintEl = document.getElementById('oneTimeHint');
+  var label = document.getElementById('oneTimeLabel');
+  var btn = document.getElementById('oneTimeBtn');
+  var mode = 'USD'; // the audience types dollars; ₦ settles behind the scenes
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.patron-chip'));
+  var toggleBtns = Array.prototype.slice.call(document.querySelectorAll('.patron-currency-btn'));
+  if (!amountInput || !btn) return;
+
+  function fx() { return OMNIARCH_FX.get(); }
+  function currentValue() { var v = Number(String(amountInput.value || '').replace(/,/g, '')); return isFinite(v) ? v : 0; }
+  function amountNgn() { var v = currentValue(); return mode === 'USD' ? v * fx().ngnPerUsd : v; }
+
+  function render() {
+    var v = currentValue();
+    var ngn = amountNgn();
+    var rate = fx().ngnPerUsd;
+    if (mode === 'USD') {
+      amountLabel.textContent = 'Amount ($)';
+      amountInput.min = '1'; amountInput.step = '0.5'; amountInput.inputMode = 'decimal';
+      hintEl.textContent = 'Minimum $1. Paystack charges the naira equivalent; your bank handles the rest.';
+      fxLine.textContent = v > 0
+        ? 'You will be charged ≈ ' + fmtNgn(ngn) + ' (at ₦' + Math.round(rate).toLocaleString('en-NG') + ' per $1' + (fx().live ? '' : ', indicative') + ')'
+        : 'Live conversion appears here.';
+      label.textContent = v > 0 ? ('$' + v.toFixed(2) + ' · ≈ ' + fmtNgn(ngn)) : 'Offer';
+    } else {
+      amountLabel.textContent = 'Amount (₦)';
+      amountInput.min = '100'; amountInput.step = '1'; amountInput.inputMode = 'numeric';
+      hintEl.textContent = 'Minimum ₦100. Your bank converts to your card\'s currency automatically.';
+      fxLine.textContent = v > 0 ? '≈ $' + (v / rate).toFixed(2) + ' at the current rate' : 'Live conversion appears here.';
+      label.textContent = v > 0 ? fmtNgn(v) : 'Offer';
+    }
+    toggleBtns.forEach(function (b) {
+      var active = b.dataset.currency === mode;
+      b.classList.toggle('patron-currency-active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    chips.forEach(function (c) {
+      var cv = mode === 'USD' ? Number(c.dataset.usd) : Number(c.dataset.ngn);
+      c.textContent = mode === 'USD' ? '$' + cv : fmtNgn(cv);
+      var active = cv === v;
+      c.classList.toggle('patron-chip-active', active);
+      c.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  toggleBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var next = b.dataset.currency;
+      if (next === mode) return;
+      var v = currentValue();
+      var rate = fx().ngnPerUsd;
+      if (v > 0) {
+        amountInput.value = next === 'USD' ? (v / rate).toFixed(2) : String(Math.round(v * rate));
+      } else {
+        amountInput.value = next === 'USD' ? '5' : '5000';
+      }
+      mode = next;
+      clearPayError('one');
+      render();
+    });
+  });
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      amountInput.value = mode === 'USD' ? chip.dataset.usd : chip.dataset.ngn;
+      clearPayError('one');
+      render();
+    });
+  });
+  amountInput.addEventListener('input', render);
+  OMNIARCH_FX.subscribe(render);
+
+  btn.addEventListener('click', function () {
+    clearPayError('one');
+    var v = currentValue();
+    var ngn = amountNgn();
+    var email = (emailInput.value || '').trim();
+    var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    if (mode === 'USD' ? v < 1 : ngn < 100) {
+      payError(mode === 'USD' ? 'The minimum offering is $1.' : 'The minimum offering is ₦100.', 'one');
+      amountInput.focus(); return;
+    }
+    if (Math.round(ngn) < 100) {
+      payError('That converts to less than ₦100. Please add a little more.', 'one');
+      amountInput.focus(); return;
+    }
+    if (!emailOk) { payError('Please enter a valid email for the receipt.', 'one'); emailInput.focus(); return; }
+    if (OMNIARCH_PAY.publicKey.indexOf('REPLACE_ME') !== -1) {
+      payError('In-site payments are not configured yet. Use the Discord or crypto offering below, or come back soon.', 'one');
+      return;
+    }
+    btn.disabled = true;
+    loadPaystack(function () {
+      try {
+        var handler = PaystackPop.setup({
+          key: OMNIARCH_PAY.publicKey,
+          email: email,
+          amount: kobo(ngn),
+          currency: OMNIARCH_PAY.currency,
+          ref: 'omniarch_one_' + Date.now() + '_' + Math.floor(Math.random() * 1e6),
+          metadata: {
+            custom_fields: [
+              { display_name: 'Contribution', variable_name: 'contribution_type', value: 'one-time-offering' },
+              { display_name: 'Amount (NGN)', variable_name: 'amount_ngn', value: String(Math.round(ngn)) },
+              { display_name: 'Typed as', variable_name: 'amount_entered', value: mode === 'USD' ? '$' + v.toFixed(2) : fmtNgn(v) }
+            ]
+          },
+          callback: function (response) {
+            showPatronSuccess('oneTime', response.reference || '');
+          },
+          onClose: function () { btn.disabled = false; }
+        });
+        handler.openIframe();
+      } catch (e) {
+        btn.disabled = false;
+        payError('Something went wrong opening the payment window. Please try again.', 'one');
+      }
+    });
+  });
+  render();
+})();
+
+/* ---------- Monthly patronage ---------- */
+(function () {
+  var emailInput = document.getElementById('monthlyEmail');
+  var btn = document.getElementById('monthlyBtn');
+  var errorEl = document.getElementById('monthlyError');
+  if (!btn) return;
+
+  btn.addEventListener('click', function () {
+    clearPayError('monthly');
+    var email = (emailInput.value || '').trim();
+    var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+    if (!emailOk) { payError('Please enter a valid email for the receipt.', 'monthly'); emailInput.focus(); return; }
+    if (OMNIARCH_PAY.publicKey.indexOf('REPLACE_ME') !== -1 || OMNIARCH_PAY.monthlyPlan.indexOf('REPLACE_ME') !== -1) {
+      payError('The monthly plan is not configured yet. Check back soon, or use the one-time / crypto offering below.', 'monthly');
+      return;
+    }
+    btn.disabled = true;
+    loadPaystack(function () {
+      try {
+        var handler = PaystackPop.setup({
+          key: OMNIARCH_PAY.publicKey,
+          email: email,
+          currency: OMNIARCH_PAY.currency,
+          plan: OMNIARCH_PAY.monthlyPlan, // plan carries the ₦5,000 monthly amount
+          ref: 'omniarch_monthly_' + Date.now() + '_' + Math.floor(Math.random() * 1e6),
+          metadata: {
+            custom_fields: [
+              { display_name: 'Contribution', variable_name: 'contribution_type', value: 'monthly-patron' }
+            ]
+          },
+          callback: function (response) {
+            showPatronSuccess('monthly', response.reference || '');
+          },
+          onClose: function () { btn.disabled = false; }
+        });
+        handler.openIframe();
+      } catch (e) {
+        btn.disabled = false;
+        payError('Something went wrong opening the payment window. Please try again.', 'monthly');
+      }
+    });
+  });
+})();
+
+/* ---------- Success panel ---------- */
+function showPatronSuccess(kind, reference) {
+  var card = kind === 'monthly' ? document.getElementById('cardMonthly') : document.getElementById('cardOneTime');
+  if (!card) return;
+  var success = card.querySelector('.patron-success');
+  var refEl = card.querySelector('.patron-reference');
+  var cta = card.querySelector('.patron-cta');
+  var buttonRowInputs = card.querySelectorAll('.patron-field, .patron-chips');
+  buttonRowInputs.forEach(function (el) { el.style.display = 'none'; });
+  if (cta) cta.style.display = 'none';
+  if (refEl) refEl.textContent = reference;
+  if (success) success.hidden = false;
+}
+
+document.querySelectorAll('.patron-reset').forEach(function (btn) {
+  btn.addEventListener('click', function () { window.location.reload(); });
+});
 </script>
 </body>
 </html>

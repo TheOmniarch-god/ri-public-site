@@ -6667,9 +6667,10 @@ html.rf-opendyslexic body[data-chapter] :not(svg):not(svg *) {
 .patron-perks li { display: flex; gap: 9px; align-items: baseline; font-size: 13.5px; color: var(--body); }
 .patron-perks li span { color: var(--red); font-weight: 800; }
 
-.patron-success { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 12px 8px 2px; }
+.patron-success { display: none; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 12px 8px 2px; }
 .patron-successseal { width: 52px; height: 52px; border-radius: 999px; display: grid; place-items: center; color: var(--green); background: var(--green-bg); border: 1px solid rgba(26, 127, 55, 0.35); }
 .patron-successseal-gold { color: var(--green); background: var(--green-bg); border-color: rgba(26, 127, 55, 0.35); }
+.patron-success:not([hidden]) { display: flex; }
 .patron-successtitle { font: 800 19px/1.3 var(--sans); letter-spacing: -0.01em; color: var(--ink); }
 .patron-successtext { font-size: 13.5px; color: var(--body); max-width: 360px; }
 .patron-reference { font: 600 12px/1.5 ui-monospace, Menlo, monospace; color: var(--ink); background: var(--gray-bg); border: 1px dashed var(--line); border-radius: 8px; padding: 8px 12px; word-break: break-all; max-width: 100%; }

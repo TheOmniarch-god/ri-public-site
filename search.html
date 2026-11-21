@@ -104,7 +104,13 @@
       return "";
     }
 
-    fetch("search-index.json").then(function (r) { return r.json(); }).then(function (d) {
+    function normQuotes(s) {
+      return s.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
+    }
+    function cNum(c) { return c === "preface" ? 0 : (Number(c) || 0); }
+    function pNum(p) { return parseFloat(String(p).replace(/a$/, ".1").replace(/b$/, ".2")) || 0; }
+
+    fetch("search-index.json?v=20261121-search-v2").then(function (r) { return r.json(); }).then(function (d) {
       DATA = d;
       var hasPreface = d.paras.some(function (p) { return p.c === "preface"; });
       countEl.textContent = d.paras.length + " paragraphs indexed across " +
@@ -118,7 +124,7 @@
     function runSearch() {
       if (!DATA) return;
       var rawQ = input.value.trim();
-      var q = rawQ.toLowerCase();
+      var q = normQuotes(rawQ.toLowerCase());
       resultsEl.innerHTML = "";
       if (q.length < 2) {
         countEl.textContent = "Type at least two characters…";
@@ -131,21 +137,21 @@
       var chapterHits = [];
       for (var ci = 0; ci < DATA.chapters.length; ci++) {
         var ch = DATA.chapters[ci];
-        var hay = (ch.num + " " + ch.title).toLowerCase();
+        var hay = normQuotes((ch.num + " " + ch.title).toLowerCase());
         if (isNum ? String(ch.num).indexOf(qDigits) === 0 : hay.indexOf(q) !== -1) chapterHits.push(ch);
       }
 
       // Paragraph matches
       var hits = [];
       for (var i = 0; i < DATA.paras.length; i++) {
-        var low = DATA.paras[i].t.toLowerCase();
+        var low = normQuotes(DATA.paras[i].t.toLowerCase());
         var pos = low.indexOf(q);
         if (pos === -1) continue;
         var n = 0, j = pos;
         while (j !== -1) { n++; j = low.indexOf(q, j + q.length); }
         hits.push({ d: DATA.paras[i], pos: pos, n: n });
       }
-      hits.sort(function (a, b) { return b.n - a.n || a.d.c - b.d.c || a.d.p - b.d.p; });
+      hits.sort(function (a, b) { return b.n - a.n || cNum(a.d.c) - cNum(b.d.c) || pNum(a.d.p) - pNum(b.d.p); });
 
       var top = hits.slice(0, 60);
       countEl.textContent = chapterHits.length + " chapter" + (chapterHits.length===1?"":"s") + " · " + hits.length + " matching paragraph" + (hits.length === 1 ? "" : "s") +
@@ -156,7 +162,7 @@
         return;
       }
 
-      var safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      var safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/'/g, "['\u2018\u2019]");
       var re = new RegExp("(" + safeQ + ")", "ig");
       var html = "";
 

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+SC:wght@400&family=Noto+Serif+SC:wght@500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Lora:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261119-containers-v8">
+<link rel="stylesheet" href="style.css?v=20261104-reader-size-v1">
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="icon-48.png" type="image/png" sizes="48x48">
 <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
@@ -69,6 +69,7 @@
       <li><a href="./#chapters">Chapters</a></li>
       <li><a href="search">Search</a></li>
       <li><a href="notes">Notes</a></li>
+      <li><a href="world">World</a></li>
       <li><a href="about">About</a></li>
       <li><a href="support">Support</a></li>
       <li><a href="https://discord.gg/UgwTKn4sQf" target="_blank" rel="noopener">Discord</a></li>
@@ -237,7 +238,7 @@
   {id:'wading-back-calm',group:'own-way',title:'Go Your Own Way',caption:'Five hundred years later, Fang Yuan wades back across the freezing river with an expressionless, tranquil gaze, unmoved by the disappointment or disapproval of others.',artist:'Kodoku Studio',src:'assets/art/chapter6/wading-back-calm.webp',thumb:'assets/art/chapter6/wading-back-calm-thumb.webp',alt:'Fang Yuan wading calmly across the underground cavern river in side profile.'},
   {id:'hauling-fang-zheng',group:'future-road',title:'Hauling Up Fang Zheng',caption:'When a flustered Fang Zheng tumbles into the slick subterranean river to the jeers of the cavern crowd, Fang Yuan grips him by the collar and hauls him back to his feet.',artist:'Kodoku Studio',src:'assets/art/chapter6/hauling-fang-zheng.webp',thumb:'assets/art/chapter6/hauling-fang-zheng-thumb.webp',alt:'Fang Yuan looking down with calm dark eyes after hauling Fang Zheng out of the river.'},
   {id:'road-will-be-interesting',group:'future-road',title:'“The Road to the Future Will Be Interesting”',caption:'With his back to the crowd, Fang Yuan steadies his younger brother and whispers at his ear with a faint, thoughtful smile: “Go on. The road to the future will be interesting.”',artist:'Kodoku Studio',src:'assets/art/chapter6/road-will-be-interesting.webp',thumb:'assets/art/chapter6/road-will-be-interesting-thumb.webp',alt:'Fang Yuan placing his hand on Fang Zheng’s shoulder with a faint, thoughtful smile.'},
-  {id:'forty-three-steps',group:'grade-a',title:'Forty-Three Steps · Grade A Aptitude',caption:'Walking deep into the glowing moon orchid field in a daze, Gu Yue Fang Zheng reaches forty-three steps amidst a golden-white tide of Hope Gu, awakening Grade A aptitude.',artist:'Kodoku Studio',src:'assets/art/chapter6/forty-three-steps.webp',thumb:'assets/art/chapter6/forty-three-steps-thumb.webp',alt:'Gu Yue Fang Zheng walking deep into the glowing moon orchid field surrounded by golden-white Hope Gu light.'}
+  {id:'forty-three-steps',group:'grade-a',title:'Forty-Three Steps · Grade A Aptitude',caption:'Walking deep into the glowing moon orchid field in a daze, Gu Yue Fang Zheng reaches forty-three steps amidst a golden-white tide of Hope Gu, opening his aperture with Grade A aptitude.',artist:'Kodoku Studio',src:'assets/art/chapter6/forty-three-steps.webp',thumb:'assets/art/chapter6/forty-three-steps-thumb.webp',alt:'Gu Yue Fang Zheng walking deep into the glowing moon orchid field surrounded by golden-white Hope Gu light.'}
  ];
  const drawer=document.getElementById('chapterArtDrawer'),lightbox=document.getElementById('artLightbox'),featured=document.getElementById('artFeaturedImage'),title=document.getElementById('artFeaturedTitle'),caption=document.getElementById('artFeaturedCaption'),artistCredit=document.getElementById('artFeaturedCredit'),rail=document.getElementById('artThumbRail'),filters=[...drawer.querySelectorAll('[data-art-filter]')];
  let activeGroup='all',activeId='bronze-primeval-sea',returnY=0,lastTrigger=null;

@@ -752,7 +752,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "Things Remain, People Have Changed",
       "Drifting Further Apart",
       "Heaven is Unpredictable, Refining Gu Comes with Its Own Hardships",
-      "Nothing but a Honey Trap"
+      "Nothing but a Honey Trap",
+      "The Fragrance of Green Bamboo Wine, a Gu Master Flaunts His Power"
     ];
     chapterTitles.forEach(function (title, i) {
       var n = i + 1;

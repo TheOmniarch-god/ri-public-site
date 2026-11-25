@@ -69,6 +69,10 @@
     {
       "source": "/chapter-11",
       "destination": "/chapter-11.html"
+    },
+    {
+      "source": "/chapter-12",
+      "destination": "/chapter-12.html"
     }
   ],
   "redirects": [
